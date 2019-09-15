@@ -16,6 +16,7 @@
 		313D90B1232D6AE2002B700A /* SwiftUITestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D90B0232D6AE2002B700A /* SwiftUITestTests.swift */; };
 		313D90BC232D6AE2002B700A /* SwiftUITestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313D90BB232D6AE2002B700A /* SwiftUITestUITests.swift */; };
 		316BCFAE232DABE000261AFF /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 316BCFAD232DABE000261AFF /* Session.swift */; };
+		3188D69F232DD22D00D5F2D3 /* MeetingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3188D69E232DD22D00D5F2D3 /* MeetingDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		313D90BB232D6AE2002B700A /* SwiftUITestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestUITests.swift; sourceTree = "<group>"; };
 		313D90BD232D6AE2002B700A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		316BCFAD232DABE000261AFF /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		3188D69E232DD22D00D5F2D3 /* MeetingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				313D9099232D6AE1002B700A /* AppDelegate.swift */,
 				313D909B232D6AE1002B700A /* SceneDelegate.swift */,
 				313D909D232D6AE1002B700A /* ContentView.swift */,
+				3188D69E232DD22D00D5F2D3 /* MeetingDetailView.swift */,
 				313D909F232D6AE2002B700A /* Assets.xcassets */,
 				313D90A4232D6AE2002B700A /* LaunchScreen.storyboard */,
 				313D90A7232D6AE2002B700A /* Info.plist */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3188D69F232DD22D00D5F2D3 /* MeetingDetailView.swift in Sources */,
 				313D909A232D6AE1002B700A /* AppDelegate.swift in Sources */,
 				316BCFAE232DABE000261AFF /* Session.swift in Sources */,
 				313D909C232D6AE1002B700A /* SceneDelegate.swift in Sources */,

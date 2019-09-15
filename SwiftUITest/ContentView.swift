@@ -15,25 +15,40 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(upcomingSessions) { session in
-                Image(systemName: "photo")
-            
-                VStack(alignment: .leading) {
-                    HStack {
+                
+                NavigationLink(destination: MeetingDetailView()) {
+                
+                    Image(session.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(40)
+                    
+                    VStack(alignment: .leading) {
                         Text(session.title)
                             .font(.headline)
-                        Text(session.date)
+                        
+                        HStack {
+                            Text(session.presenter)
+                                .font(.callout)
+                                .foregroundColor(.secondary)
+                            
+                            Text(session.date)
+                                .font(.callout)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Text(session.description)
                             .font(.footnote)
                             .foregroundColor(.secondary)
+                            .frame(height: 60.0)
+                            .padding(1)
                     }
-                    Text(session.description)
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                        .frame(height: 60.0)
+                .padding(5)
                 }
-            .padding(5)
-            }
+            }   
+            .navigationBarTitle(Text("Meetups"))
         }
-    .navigationBarTitle("Dad")
     }
 }
 
