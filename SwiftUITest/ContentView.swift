@@ -17,25 +17,20 @@ struct ContentView: View {
         NavigationView {
             List {
                 
-                Section {
-                    Text("Upcoming Sessions")
-                        .fontWeight(.bold)
-                        .font(.headline)
-                }
-                
-                Section {
+                Section(header: Text("Upcoming Sessions")
+                    .fontWeight(.bold)
+                    .font(.headline))
+                {
+                    
                     ForEach(upcomingSessions) { session in
                         MeetingCell(session: session)
                     }
                 }
                 
-                Section {
-                    Text("Past Sessions")
-                        .fontWeight(.bold)
-                        .font(.headline)
-                }
-                
-                Section {
+                Section(header: Text("Past Sessions")
+                    .fontWeight(.bold)
+                    .font(.headline))
+                {
                     ForEach(pastSessions) { session in
                         MeetingCell(session: session)
                     }

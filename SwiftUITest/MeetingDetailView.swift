@@ -27,10 +27,11 @@ struct MeetingDetailView: View {
                 Image("Display")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 400, height: 300)
-                .cornerRadius(40)
-                
-                Spacer()
+                .frame(width: 400, height: 400)
+                .cornerRadius(30)
+                .padding(10)
+                    
+                    
             }
             
             Spacer()
