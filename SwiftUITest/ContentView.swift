@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var showFavoritesOnly = false
+    
     var upcomingSessions: [Session] = []
     var pastSessions: [Session] = []
     
@@ -17,13 +19,21 @@ struct ContentView: View {
         NavigationView {
             List {
                 
+                // ##### Dont Show Until Later
+                Toggle(isOn: $showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                // ######
+                
                 Section(header: Text("Upcoming Sessions")
                     .fontWeight(.bold)
                     .font(.headline))
                 {
                     
                     ForEach(upcomingSessions) { session in
+                        if !self.showFavoritesOnly || session.isFavorite {
                         MeetingCell(session: session)
+                        }
                     }
                 }
                 
@@ -32,7 +42,9 @@ struct ContentView: View {
                     .font(.headline))
                 {
                     ForEach(pastSessions) { session in
+                        if !self.showFavoritesOnly || session.isFavorite {
                         MeetingCell(session: session)
+                        }
                     }
                 }
             }
@@ -62,7 +74,7 @@ struct MeetingCell: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 80, height: 80)
                 .cornerRadius(40)
-            
+              
             VStack(alignment: .leading) {
                 
                 HStack {
@@ -76,9 +88,17 @@ struct MeetingCell: View {
                     .foregroundColor(.secondary)
                 }
                 
-                Text(session.presenter)
+                HStack {
+                    Text(session.presenter)
                     .font(.callout)
                     .foregroundColor(.secondary)
+                    
+                    if session.isFavorite {
+                        Image(systemName: "star.fill")
+                            .imageScale(.medium)
+                            .foregroundColor(.yellow)
+                    }
+                }
                 
                 Text(session.description)
                     .font(.footnote)
