@@ -24,7 +24,7 @@ struct MeetingDetailView: View {
             Spacer()
             
             HStack {
-                Image("Display")
+                Image(session.descriptionPhoto)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 400, height: 400)

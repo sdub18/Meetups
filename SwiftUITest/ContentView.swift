@@ -19,11 +19,9 @@ struct ContentView: View {
         NavigationView {
             List {
                 
-                // ##### Dont Show Until Later
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
                 }
-                // ######
                 
                 Section(header: Text("Upcoming Sessions")
                     .fontWeight(.bold)
@@ -37,7 +35,7 @@ struct ContentView: View {
                     }
                 }
                 
-                Section(header: Text("Past Sessions")
+                Section(header: Text("Recent Sessions")
                     .fontWeight(.bold)
                     .font(.headline))
                 {
@@ -48,7 +46,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle(Text("Meetups"))
+            .navigationBarTitle(Text("Swift Meetups"))
             .listStyle(GroupedListStyle())
         }
     }
@@ -88,10 +86,14 @@ struct MeetingCell: View {
                     .foregroundColor(.secondary)
                 }
                 
+                Spacer()
+                
                 HStack {
                     Text(session.presenter)
                     .font(.callout)
                     .foregroundColor(.secondary)
+                    
+                    Spacer()
                     
                     if session.isFavorite {
                         Image(systemName: "star.fill")
